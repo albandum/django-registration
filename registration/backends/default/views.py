@@ -132,6 +132,14 @@ class ActivationView(BaseActivationView):
 
         """
         activated_user = RegistrationProfile.objects.activate_user(activation_key)
+
+        from django.core.mail import send_mail
+        send_mail(  'Daylighted - '+activated_user.user.username+' activated their account',
+                        activated_user.user.username+' ('+activated_user.user+') just activated their account',
+                        'team@day-lighted.com',
+                        ['team@day-lighted.com'],
+                        fail_silently=True)
+
         if activated_user:
             signals.user_activated.send(sender=self.__class__,
                                         user=activated_user,
