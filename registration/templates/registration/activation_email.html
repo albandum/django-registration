@@ -10,8 +10,10 @@
 <body>
 <p>
     {% blocktrans %}
+    Hello,
+
     You (or someone pretending to be you) have asked to register an account at
-    {{ site.name }}.  If this wasn't you, please ignore this email
+    Daylighted.  If this wasn't you, please ignore this email
     and your address will be removed from our records.
     {% endblocktrans %}
 </p>
@@ -23,14 +25,15 @@
 </p>
 
 <p>
-    <a href="http://{{site.domain}}{% url 'registration_activate' activation_key %}">
+    <a href="{{site.domain}}{% url 'registration_activate' activation_key %}">
         {{site.domain}}{% url 'registration_activate' activation_key %}
     </a>
 </p>
 <p>
     {% blocktrans %}
-    Sincerely,
-    {{ site.name }} Management
+    Warmest Regards,
+
+    The team at Daylighted
     {% endblocktrans %}
 </p>
 </body>
