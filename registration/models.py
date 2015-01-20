@@ -68,6 +68,14 @@ class RegistrationManager(models.Manager):
                 user.save()
                 profile.activation_key = self.model.ACTIVATED
                 profile.save()
+
+                from django.core.mail import send_mail
+                send_mail(  'Daylighted - '+user.username+' activated their account',
+                        user.username+' ('+user.email+') just activated their account',
+                        'team@day-lighted.com',
+                        ['team@day-lighted.com'],
+                        fail_silently=True)
+
                 return user
         return False
 
