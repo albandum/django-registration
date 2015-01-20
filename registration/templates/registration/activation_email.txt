@@ -14,7 +14,7 @@ To activate this account, please click the following link within the next
 
 {% blocktrans %}
 Sincerely,
-{{ site.name }} Management
+The team at Daylighted
 {% endblocktrans %}
 
 
