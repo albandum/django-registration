@@ -72,8 +72,8 @@ class RegistrationManager(models.Manager):
                 from django.core.mail import send_mail
                 send_mail(  'Daylighted - '+user.username+' activated their account',
                         user.username+' ('+user.email+') just activated their account',
-                        'team@day-lighted.com',
-                        ['team@day-lighted.com'],
+                        'info@daylighted.com',
+                        ['curators@daylighted.com'],
                         fail_silently=True)
 
                 return user
